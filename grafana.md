@@ -1,4 +1,8 @@
-### grafana
+---
+title: grafana
+date: 2019-11-20 20:33:45
+tags: 监控
+---
 
 #### install
 

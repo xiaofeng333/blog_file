@@ -1,6 +1,6 @@
 ---
 title: springsecurity参考手册
-tags: JAVA
+tags: spring security
 date: 2019-03-30 16:11:58
 ---
 

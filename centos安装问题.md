@@ -1,3 +1,9 @@
+---
+title: centos安装问题
+date: 2019-12-04 16:37:02
+tags: linux
+---
+
 ### centos安装问题
 
 #### dracut_initqueue timeout

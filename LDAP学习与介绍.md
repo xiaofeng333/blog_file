@@ -1,6 +1,6 @@
 ---
 title: LDAP学习与介绍
-tags: JAVA
+tags: database
 date: 2019-04-04 23:23:48
 ---
 

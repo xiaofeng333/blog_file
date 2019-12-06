@@ -1,3 +1,9 @@
+---
+title: SpringData
+tags: spring
+date: 2019-03-30 16:11:58
+---
+
 ### SpringData
 
 Spring Data存储库抽象的目标是显着减少为各种持久性存储实现数据访问层所需的样板代码量。

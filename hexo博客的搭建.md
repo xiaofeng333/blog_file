@@ -10,7 +10,7 @@ tags: hexo
 
 ### 主题
 
-经对比, 选择[hexo-theme-matery](<https://github.com/blinkfox/hexo-theme-matery>), demo为[闪烁之狐](<https://blinkfox.github.io/>), 贼拉好看。
+经对比, 选择[hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery), demo为[闪烁之狐](<https://blinkfox.github.io/>), 贼拉好看。
 
 * 下载主题至themes文件夹下, 然后修改`_config.yml`的theme字段为主题文件夹名称。
 

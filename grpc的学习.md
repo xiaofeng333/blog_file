@@ -141,10 +141,18 @@ standard error model与grpc采用的数据交互形式无关, 但局限性较大
 
 
 
-#### BenchMarking
+#### 项目实例
+
+结合[gRPC-Basics-Java](https://www.grpc.io/docs/tutorials/basic/java/)观看更好。
+
+[本人例子项目](https://github.com/xiaofeng333/hello_grpc)
+
+[官方](https://github.com/grpc/grpc-java)
 
 
 
 #### 参考
 
 [官方文档](https://www.grpc.io/docs/)
+
+[grpc官方文档中文版](http://doc.oschina.net/grpc?t=56831)

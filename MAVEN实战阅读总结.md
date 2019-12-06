@@ -1,6 +1,6 @@
 ---
-title: MAVEN实战阅读总结
-tags: 工具
+title: maven实战阅读总结
+tags: maven
 date: 2019-02-17 20:40:27
 ---
 

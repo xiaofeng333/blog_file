@@ -1,4 +1,8 @@
-### MAVEN
+---
+title: maven小知识-classifier
+date: 2019-12-02 19:58:19
+tags: maven
+---
 
 #### classifier
 

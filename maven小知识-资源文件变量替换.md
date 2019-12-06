@@ -1,6 +1,6 @@
 ---
-title: MAVEN资源文件变量替换
-tags: JAVA
+title: maven小知识-资源文件变量替换
+tags: maven
 date: 2019-05-19 18:10:55
 ---
 

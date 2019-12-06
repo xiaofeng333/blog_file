@@ -1,3 +1,9 @@
+---
+title: spring boot maven plugin简介
+tags: maven
+date: 2019-05-19 18:10:55
+---
+
 ### Spring Boot Maven Plugin简介
 
 ##### 在pom.xml中引入
