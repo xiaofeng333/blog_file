@@ -60,3 +60,69 @@ spec:             // Required
 kubectl expose rc webapp
 ```
 
+还可以通过上述配置文件来定义service。
+
+```shell
+kubectl create -f webapp-svc.yaml
+```
+
+#### 负载分发策略
+
+* RoundRobin: 轮询模式, 即轮询将请求转发到后端的各个Pod上。
+
+* SessionAffinity: 基于客户端的IP地址进行会话保持的模式, 可将sessionAffinity设置为`ClientIP`来启用。
+
+* 自己控制负载均衡策略: 将Service的ClusterIP设置为`None`(无入口IP地址), 仅通过Label Selector将后端的Pod列表返回给调用的客户端。
+
+  ```yaml
+  ...
+  clusterIP: None
+  ...
+  ```
+
+#### 访问外部服务
+
+定义一个不带标签选择器的Service, 即无法选择后端的Pod, 此时系统不会自动创建EndPoint, 因此手动创建一个与Service同名的EndPoint, 用于指向实际的后端访问地址。
+
+```yaml
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: my-service
+subsets:
+  - adresses:
+      - IP: 1.2.3.4
+      ports:
+        - port: 80
+```
+
+
+
+### DNS服务搭建
+
+kubernetes提供的虚拟DNS服务名为skydns, 由四个组件组成。
+
+* etcd: DNS存储。
+* kube2sky: 将kubernetes Master的Service注册到etcd。
+* skyDNS: 提供DNS域名解析服务。
+* healthz: 提供对skydns服务的健康检查功能。
+
+
+
+### Ingress: HTTP 7层路由机制
+
+实现HTTP层的业务路由机制, 即不同的URL地址对应到不同的后端服务或者虚拟服务器。
+
+在kubernetes集群中, Ingress的实现需要通过Ingress的定义与Ingress Controller的定义结合起来, 才能形成完整的HTTP负载分发功能。
+
+#### 创建Ingress Controller
+
+在定义Ingress之前, 需要先部署Ingress Controller, 以实现为所有后端Service提供一个统一的入口。
+
+Ingress Controller需要实现基于不同HTTP URL向后转发的负载分发规则, 也可设置能够提供该类型HTTP路由的LoadBalancer为Ingress Controller。
+
+Ingress Controller以Pod的形式运行, 监控apiserver的/ingress接口, 如果service发生变化, 则Ingress Controller应自动更新其转发规则。
+
+#### 定义Ingress
+
+设置到后端Service的转发规则。
